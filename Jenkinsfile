@@ -6,19 +6,19 @@ pipeline {
  }
  agent any
  stages {
- stage(‘Cloning Git’) {
+ stage(‘cloning’) {
  steps {
  git([url: 'https://github.com/sajidshaikhguru/simple-docker.git', branch: ‘main’])
  }
  }
- stage(‘Building image’) {
+ stage(‘building image’) {
  steps{
  script {
  dockerImage = docker.build imagename
  }
  }
  }
- stage(‘Running image’) {
+ stage(‘running image’) {
  steps{
  script {
  sh “docker run ${imagename}:latest”
