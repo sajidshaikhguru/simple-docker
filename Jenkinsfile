@@ -1,8 +1,8 @@
 pipeline {
  environment {
  imagename = “sajidshaikhguru/jenkins-docker”
- registryCredential = ‘adithya-docckerhub’
- dockerImage = ‘’
+ registryCredential = ‘sajidshaikhguru’
+ dockerImage = ‘mama’
  }
  agent any
  stages {
