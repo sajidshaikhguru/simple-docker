@@ -1,11 +1,6 @@
 pipeline {
   agent any
  stages {
- stage(‘cloning’) {
- steps {
- git([url: 'https://github.com/sajidshaikhguru/simple-docker.git', branch: ‘main’])
- }
- }
  stage(‘building’) {
  steps{
  script {
