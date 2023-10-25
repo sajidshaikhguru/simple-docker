@@ -6,7 +6,7 @@ pipeline {
  }
  agent any
  stages {
- stage(‘Cloning Git’) {
+ stage(‘Cloning git’) {
  steps {
  git([url: ‘https://github.com/sajidshaikhguru/simple-docker.git', branch: ‘main’])
  }
