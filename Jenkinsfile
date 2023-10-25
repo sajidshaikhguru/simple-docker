@@ -18,14 +18,14 @@ pipeline {
  }
  }
  }
- stage(‘running image’) {
+ stage(‘running_image’) {
  steps{
  script {
  sh “docker run ${imagename}:latest”
  }
  }
  }
- stage(‘Deploy Image’) {
+ stage(‘deploy_image’) {
  steps{
  script {
  docker.withRegistry( ‘’, registryCredential ) {
