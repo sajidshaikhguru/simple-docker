@@ -11,7 +11,7 @@ pipeline {
  git([url: 'https://github.com/sajidshaikhguru/simple-docker.git', branch: ‘main’])
  }
  }
- stage(‘building image’) {
+ stage(‘building’) {
  steps{
  script {
  dockerImage = docker.build imagename
