@@ -1,10 +1,5 @@
 pipeline {
- environment {
- imagename = “sajidshaikhguru/jenkinsdocker”
- registryCredential = ‘sajidshaikhguru’
- dockerImage = ‘mama’
- }
- agent any
+  agent any
  stages {
  stage(‘cloning’) {
  steps {
@@ -14,7 +9,7 @@ pipeline {
  stage(‘building’) {
  steps{
  script {
- dockerImage = docker.build imagename
+ dockerImage = docker.build sajidshaikhguru/jenkinsdocker
  }
  }
  }
@@ -28,7 +23,7 @@ pipeline {
  stage(‘deploy_image’) {
  steps{
  script {
- docker.withRegistry( ‘’, registryCredential ) {
+ docker.withRegistry( ‘’, sajidshaikhguru ) {
  dockerImage.push(“$BUILD_NUMBER”)
  dockerImage.push(‘latest’)
  }
